@@ -184,6 +184,7 @@ class PhotosFragment : BaseFragment<FragmentPhotosBinding>() {
     private fun initObservers() {
         photosViewModel.photos.observe(viewLifecycleOwner) { photos ->
             binding.progressBar.isVisible = false
+            binding.progress.isVisible = false
             photosAdapter.submitList(photos)
         }
         photosViewModel.errorGet.observe(viewLifecycleOwner) { isError ->
@@ -248,7 +249,7 @@ class PhotosFragment : BaseFragment<FragmentPhotosBinding>() {
                                     DEFAULT_ID,
                                     imageFileName,
                                     base64Img,
-                                    "31.10.2023 19:20:15",
+                                    dateTime,
                                     location.latitude,
                                     location.longitude
                                 )
