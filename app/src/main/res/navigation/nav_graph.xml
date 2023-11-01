@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/photosFragment">
+
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="com.example.photos.ui.photos.PhotosFragment"
+        android:label="Photos"
+        tools:layout="@layout/fragment_photos">
+        <action
+            android:id="@+id/action_photosFragment_to_watchPhotoFragment"
+            app:destination="@id/watchPhotoFragment"
+            app:enterAnim="@anim/fade_in" />
+        <action
+            android:id="@+id/action_photosFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.photos.ui.maps.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map">
+        <argument
+            android:name="isSingle"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="photoId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_mapFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchPhotoFragment"
+        android:name="com.example.photos.ui.watch_photo.WatchPhotoFragment"
+        android:label="Photo details"
+        tools:layout="@layout/fragment_watch_photo">
+        <action
+            android:id="@+id/action_watchPhotoFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+        <action
+            android:id="@+id/action_watchPhotoFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+</navigation>

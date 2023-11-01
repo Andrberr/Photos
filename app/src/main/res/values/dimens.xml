@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="map_marker_icon_size">30dp</dimen>
+    <dimen name="search_bar_container_height">56dp</dimen>
+    <dimen name="search_bar_container_left_padding">16dp</dimen>
+    <dimen name="search_bar_container_right_padding">16dp</dimen>
+    <dimen name="search_bar_text_left_margin">56dp</dimen>
+    <dimen name="search_bar_text_right_margin">56dp</dimen>
+</resources>
